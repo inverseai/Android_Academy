@@ -2,4 +2,6 @@
     <string name="app_name">UIComponents</string>
     <string name="order_a_coffee">Order A Coffee!</string>
     <string name="your_name">Your Name</string>
+    <string name="your_address">Your Address</string>
+    <string name="your_phone_no">Your Phone Number</string>
 </resources>
