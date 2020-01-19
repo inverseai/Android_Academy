@@ -11,11 +11,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:padding="8dp"
-        android:text="Order A Coffee!"
+        android:layout_margin="@dimen/default_margin_padding"
+        android:padding="@dimen/default_margin_padding"
+        android:text="@string/order_a_coffee"
         android:textColor="@color/colorPrimary"
-        android:textSize="16sp"
+        android:textSize="@dimen/default_font_size"
         android:textStyle="bold"
         />
 
