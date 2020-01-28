@@ -53,4 +53,44 @@
         android:hint="@string/your_phone_no"
         android:inputType="number"/>
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/default_margin_padding"
+        android:layout_margin="@dimen/default_margin_padding"
+        android:hint="@string/no_of_cup"
+        android:inputType="number"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/default_margin_padding"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hot_coffee"
+            android:padding="@dimen/default_margin_padding"/>
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="0dp"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cold_coffee"
+            android:padding="@dimen/default_margin_padding"/>
+
+    </RadioGroup>
+
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/default_margin_padding"
+        android:text="@string/add_extra_sugar"
+        android:layout_margin="@dimen/default_margin_padding"/>
+
 </LinearLayout>
