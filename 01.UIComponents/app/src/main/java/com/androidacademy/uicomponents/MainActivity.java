@@ -13,13 +13,15 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int HOT_COFFEE = 1;
+    private static final int COLD_COFFEE = 2;
     private EditText customerNameEditText,customerAddressEditText,customerPhoneNoEditText,numberOfCoffeeEditText;
     private RadioGroup coffeeTypeRadioGroup;
     private CheckBox addExtraSugarCheckbox;
     private Button placeOrderButton;
     private String customerName,customerAddress,customerPhoneNo,numberOfCoffee;
     private boolean addExtraSugar = false;
-    private int coffeeType = 1;
+    private int coffeeType = HOT_COFFEE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -66,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if(radioGroup.getCheckedRadioButtonId()==R.id.hot_coffee_radio_button)
-                    coffeeType = 1;
+                    coffeeType = HOT_COFFEE;
                 else if(radioGroup.getCheckedRadioButtonId()==R.id.cold_coffee_radio_button)
-                    coffeeType = 2;
+                    coffeeType = COLD_COFFEE;
             }
         });
     }
@@ -95,9 +97,9 @@ public class MainActivity extends AppCompatActivity {
     {
         switch (coffeeType)
         {
-            case 1:
+            case HOT_COFFEE:
                 return "Hot Coffee";
-            case 2 :
+            case COLD_COFFEE :
                 return "Cold Coffee";
             default:
                 return "";
