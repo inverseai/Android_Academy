@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -17,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox addExtraSugarCheckbox;
     private Button placeOrderButton;
     private String customerName,customerAddress,customerPhoneNo,numberOfCoffee;
+    private boolean addExtraSugar = false;
+    private int coffeeType = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -51,6 +54,23 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        addExtraSugarCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                addExtraSugar = b;
+            }
+        });
+
+        coffeeTypeRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if(radioGroup.getCheckedRadioButtonId()==R.id.hot_coffee_radio_button)
+                    coffeeType = 1;
+                else if(radioGroup.getCheckedRadioButtonId()==R.id.cold_coffee_radio_button)
+                    coffeeType = 2;
+            }
+        });
     }
 
     private void showToast(String message)
@@ -68,6 +88,19 @@ public class MainActivity extends AppCompatActivity {
 
     private String getOrderMessage()
     {
-        return "Name : "+customerName+"\nAddress : "+customerAddress+"\nPhone No : "+customerPhoneNo+"\nNumber of Coffee : "+numberOfCoffee;
+        return "Name : "+customerName+"\nAddress : "+customerAddress+"\nPhone No : "+customerPhoneNo+"\nNumber of Coffee : "+numberOfCoffee+"\nCoffee Type : "+getCoffeeTypeString();
+    }
+
+    private String getCoffeeTypeString()
+    {
+        switch (coffeeType)
+        {
+            case 1:
+                return "Hot Coffee";
+            case 2 :
+                return "Cold Coffee";
+            default:
+                return "";
+        }
     }
 }
