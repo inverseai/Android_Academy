@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private RadioGroup coffeeTypeRadioGroup;
     private CheckBox addExtraSugarCheckbox;
     private Button placeOrderButton;
+    private String customerName,customerAddress,customerPhoneNo,numberOfCoffee;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -43,8 +44,10 @@ public class MainActivity extends AppCompatActivity {
     {
         placeOrderButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                showToast("Clicked On Place Order Button");
+            public void onClick(View view)
+            {
+                grabValuesFromEditTexts();
+                showToast(getOrderMessage());
 
             }
         });
@@ -53,5 +56,18 @@ public class MainActivity extends AppCompatActivity {
     private void showToast(String message)
     {
         Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+    }
+
+    private void grabValuesFromEditTexts()
+    {
+        customerName = customerNameEditText.getText().toString();
+        customerAddress = customerAddressEditText.getText().toString();
+        customerPhoneNo = customerPhoneNoEditText.getText().toString();
+        numberOfCoffee = numberOfCoffeeEditText.getText().toString();
+    }
+
+    private String getOrderMessage()
+    {
+        return "Name : "+customerName+"\nAddress : "+customerAddress+"\nPhone No : "+customerPhoneNo+"\nNumber of Coffee : "+numberOfCoffee;
     }
 }
