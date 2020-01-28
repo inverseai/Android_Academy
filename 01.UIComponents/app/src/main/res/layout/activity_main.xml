@@ -27,6 +27,13 @@
         android:textStyle="bold"
         android:textAlignment="center"/>
 
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="@dimen/default_margin_padding"
+        android:background="?android:attr/listDivider" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
