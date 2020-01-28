@@ -78,6 +78,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/hot_coffee"
+            android:checked="true"
+            android:buttonTint="@color/colorPrimary"
             android:padding="@dimen/default_margin_padding"/>
 
         <View
@@ -88,6 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cold_coffee"
+            android:buttonTint="@color/colorPrimary"
             android:padding="@dimen/default_margin_padding"/>
 
     </RadioGroup>
