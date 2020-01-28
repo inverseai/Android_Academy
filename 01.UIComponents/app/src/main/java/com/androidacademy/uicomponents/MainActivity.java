@@ -90,7 +90,8 @@ public class MainActivity extends AppCompatActivity {
 
     private String getOrderMessage()
     {
-        return "Name : "+customerName+"\nAddress : "+customerAddress+"\nPhone No : "+customerPhoneNo+"\nNumber of Coffee : "+numberOfCoffee+"\nCoffee Type : "+getCoffeeTypeString();
+        return "Name : "+customerName+"\nAddress : "+customerAddress+"\nPhone No : "+customerPhoneNo+"\nNumber of Coffee : "
+                +numberOfCoffee+"\nCoffee Type : "+getCoffeeTypeString() + "\nAdd Extra Sugar : "+getExtraSugarText();
     }
 
     private String getCoffeeTypeString()
@@ -104,5 +105,10 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return "";
         }
+    }
+
+    private String getExtraSugarText()
+    {
+        return addExtraSugar ? "Yes" : "No";
     }
 }
