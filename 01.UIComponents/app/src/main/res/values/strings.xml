@@ -8,4 +8,5 @@
     <string name="add_extra_sugar">Add Extra Sugar</string>
     <string name="hot_coffee">Hot Coffee</string>
     <string name="cold_coffee">Cold Coffee</string>
+    <string name="place_order">Place Order</string>
 </resources>

@@ -100,4 +100,13 @@
         android:text="@string/add_extra_sugar"
         android:layout_margin="@dimen/default_margin_padding"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/double_margin_padding"
+        android:padding="@dimen/double_margin_padding"
+        android:text="@string/place_order"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimary"/>
+
 </LinearLayout>
