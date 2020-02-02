@@ -1,4 +1,4 @@
-package com.androidacademy.uicomponents;
+package com.androidacademy.coffeefy;
 
 import android.content.Context;
 
