@@ -10,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private double perCupCoffeePrice = 1.50,totalCoffeePrice = 1.50;
     private Toolbar appToolbar;
     private TextView coffeePriceTextView, coffeePlusButton, coffeeMinusButton, coffeeAmountTextView;
+    private Spinner numOfExtraSugerSpoonSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         coffeePlusButton = findViewById(R.id.coffee_plus_button);
         coffeeMinusButton = findViewById(R.id.coffee_minus_button);
         coffeeAmountTextView = findViewById(R.id.coffee_num_of_cup_text);
+        numOfExtraSugerSpoonSpinner = findViewById(R.id.num_of_extra_sugar_spoon);
 
         setSupportActionBar(appToolbar);
         if(getSupportActionBar() != null )
@@ -74,8 +77,10 @@ public class MainActivity extends AppCompatActivity {
 
         addExtraSugarCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b)
+            {
                 addExtraSugar = b;
+                updateNumOfExtraSugarSpinnerVisibiltiy(addExtraSugar);
             }
         });
 
@@ -156,10 +161,11 @@ public class MainActivity extends AppCompatActivity {
         totalCoffeePrice = numOfCoffeeCup * perCupCoffeePrice;
         coffeeAmountTextView.setText(numOfCoffeeCup+"");
         coffeePriceTextView.setText("$ "+totalCoffeePrice+"0");
+    }
 
-
-
-
+    private void updateNumOfExtraSugarSpinnerVisibiltiy(boolean isVisible)
+    {
+        numOfExtraSugerSpoonSpinner.setVisibility(isVisible ? View.VISIBLE : View.GONE);
     }
 
     private String getExtraSugarText()

@@ -237,6 +237,7 @@
                 android:layout_margin="@dimen/double_margin_padding"
                 android:entries="@array/extra_sugar_option"
                 android:padding="@dimen/default_margin_padding"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/extra_sugar_checkbox"
                 app:layout_constraintTop_toBottomOf="@id/coffee_type_radio_group"
