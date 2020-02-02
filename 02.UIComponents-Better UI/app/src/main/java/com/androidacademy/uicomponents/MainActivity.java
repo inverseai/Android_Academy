@@ -1,10 +1,14 @@
 package com.androidacademy.uicomponents;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -24,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private Button placeOrderButton;
     private String customerName,customerAddress,customerPhoneNo,numberOfCoffee;
     private boolean addExtraSugar = false;
-    private int coffeeType = HOT_COFFEE, numOfCoffeeCup = 1;
+    private int coffeeType = HOT_COFFEE, numOfCoffeeCup = 1, numOfExtraSugarSpoon = 0;
     private double perCupCoffeePrice = 1.50,totalCoffeePrice = 1.50;
     private Toolbar appToolbar;
     private TextView coffeePriceTextView, coffeePlusButton, coffeeMinusButton, coffeeAmountTextView;
@@ -37,8 +41,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         inflateUIElements();
         initUserInteractions();
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home_screen_menu,menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
+        switch (item.getItemId()){
+            case R.id.exit_menu:
+                showToast("ExitMenuPressed",Toast.LENGTH_SHORT);
+                break;
+        }
+        return true;
     }
 
     private void inflateUIElements()
@@ -70,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 grabValuesFromEditTexts();
-                showToast(getOrderMessage());
+                showToast(getOrderMessage(),Toast.LENGTH_LONG);
 
             }
         });
@@ -80,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b)
             {
                 addExtraSugar = b;
-                updateNumOfExtraSugarSpinnerVisibiltiy(addExtraSugar);
+                updateNumOfExtraSugarSpinnerVisibility(addExtraSugar);
             }
         });
 
@@ -107,11 +126,24 @@ public class MainActivity extends AppCompatActivity {
                 decrementNumOfCoffeeCup();
             }
         });
+
+        numOfExtraSugerSpoonSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
+            {
+                numOfExtraSugarSpoon = (i+1);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
-    private void showToast(String message)
+    private void showToast(String message, int toastLength)
     {
-        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,message,toastLength).show();
     }
 
     private void grabValuesFromEditTexts()
@@ -125,7 +157,8 @@ public class MainActivity extends AppCompatActivity {
     private String getOrderMessage()
     {
         return "Name : "+customerName+"\nAddress : "+customerAddress+"\nPhone No : "+customerPhoneNo+"\nNumber of Coffee : "
-                +numberOfCoffee+"\nCoffee Type : "+getCoffeeTypeString() + "\nAdd Extra Sugar : "+getExtraSugarText();
+                +numOfCoffeeCup+"\nCoffee Type : "+getCoffeeTypeString() + "\nAdd Extra Sugar : "+getExtraSugarText()
+                +"\nTotal Number of Extra Sugar "+numOfExtraSugarSpoon+" Spoons(s)\nTotal Price : $ "+totalCoffeePrice;
     }
 
     private String getCoffeeTypeString()
@@ -163,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
         coffeePriceTextView.setText("$ "+totalCoffeePrice+"0");
     }
 
-    private void updateNumOfExtraSugarSpinnerVisibiltiy(boolean isVisible)
+    private void updateNumOfExtraSugarSpinnerVisibility(boolean isVisible)
     {
         numOfExtraSugerSpoonSpinner.setVisibility(isVisible ? View.VISIBLE : View.GONE);
     }
