@@ -1,6 +1,7 @@
 package com.androidacademy.uicomponents;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private String customerName,customerAddress,customerPhoneNo,numberOfCoffee;
     private boolean addExtraSugar = false;
     private int coffeeType = HOT_COFFEE;
+    private Toolbar appToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -43,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
         coffeeTypeRadioGroup = findViewById(R.id.coffee_type_radio_group);
         addExtraSugarCheckbox = findViewById(R.id.extra_sugar_checkbox);
         placeOrderButton = findViewById(R.id.place_order_button);
+        appToolbar = findViewById(R.id.app_toolbar);
+
+        setSupportActionBar(appToolbar);
+        if(getSupportActionBar() != null )
+            getSupportActionBar().setTitle(getResources().getString(R.string.order_coffee));
     }
 
     private void initUserInteractions()

@@ -5,5 +5,7 @@
     android:layout_height="?attr/actionBarSize"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/light_orange"
+    app:titleTextColor="@color/white"
+    app:title="@string/order_coffee"
     android:elevation="@dimen/default_margin_padding"
     />
