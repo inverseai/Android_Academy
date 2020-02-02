@@ -3,10 +3,21 @@
     <string name="order_a_coffee">Order A Coffee!</string>
     <string name="your_name">Your Name</string>
     <string name="your_address">Your Address</string>
-    <string name="your_phone_no">Your Phone Number</string>
+    <string name="your_phone_no">Phone Number</string>
     <string name="no_of_cup">Total Number of Cup</string>
     <string name="add_extra_sugar">Add Extra Sugar</string>
     <string name="hot_coffee">Hot Coffee</string>
     <string name="cold_coffee">Cold Coffee</string>
     <string name="place_order">Place Order</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+
+    <array name="extra_sugar_option">
+        <item>1 Spoon</item>
+        <item>2 Spoon</item>
+        <item>3 Spoon</item>
+        <item>4 Spoon</item>
+        <item>5 Spoon</item>
+        <item>6 Spoon</item>
+    </array>
 </resources>

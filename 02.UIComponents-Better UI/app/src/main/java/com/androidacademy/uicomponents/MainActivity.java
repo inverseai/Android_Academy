@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void inflateUIElements()
     {
-        customerNameEditText = findViewById(R.id.customer_name_edit_text);
+        customerNameEditText = findViewById(R.id.customer_first_name_edit_text);
         customerAddressEditText = findViewById(R.id.customer_address_edit_text);
         customerPhoneNoEditText = findViewById(R.id.customer_phone_no_edit_text);
         numberOfCoffeeEditText = findViewById(R.id.num_of_coffee_edit_text);
