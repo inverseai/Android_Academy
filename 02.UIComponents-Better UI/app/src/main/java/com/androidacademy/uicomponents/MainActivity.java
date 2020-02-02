@@ -54,7 +54,10 @@ public class MainActivity extends AppCompatActivity {
     {
         switch (item.getItemId()){
             case R.id.exit_menu:
-                showToast("ExitMenuPressed",Toast.LENGTH_SHORT);
+                finish();
+                break;
+            case R.id.cart_menu:
+                showToast("CartMenuPressed",Toast.LENGTH_SHORT);
                 break;
         }
         return true;
