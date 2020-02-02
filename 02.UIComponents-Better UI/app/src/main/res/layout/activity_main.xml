@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:padding="@dimen/default_margin_padding"
+            android:layout_margin="@dimen/default_margin_padding"
+            android:src="@drawable/coffee"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_margin_padding"
+            android:padding="@dimen/default_margin_padding"
+            android:text="@string/order_a_coffee"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/default_font_size"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="@dimen/default_margin_padding"
+            android:background="?android:attr/listDivider" />
+
+        <EditText
+            android:id="@+id/customer_name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/default_margin_padding"
+            android:layout_marginStart="@dimen/default_margin_padding"
+            android:layout_marginEnd="@dimen/default_margin_padding"
+            android:layout_marginBottom="@dimen/default_margin_padding"
+            android:hint="@string/your_name"
+            android:inputType="textAutoComplete"/>
+
+        <EditText
+            android:id="@+id/customer_address_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/default_margin_padding"
+            android:layout_margin="@dimen/default_margin_padding"
+            android:hint="@string/your_address"
+            android:inputType="textAutoComplete"/>
+
+        <EditText
+            android:id="@+id/customer_phone_no_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/default_margin_padding"
+            android:layout_margin="@dimen/default_margin_padding"
+            android:hint="@string/your_phone_no"
+            android:inputType="phone"/>
+
+        <EditText
+            android:id="@+id/num_of_coffee_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/default_margin_padding"
+            android:layout_margin="@dimen/default_margin_padding"
+            android:hint="@string/no_of_cup"
+            android:inputType="number"/>
+
+        <RadioGroup
+            android:id="@+id/coffee_type_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/default_margin_padding"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/hot_coffee_radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hot_coffee"
+                android:checked="true"
+                android:buttonTint="@color/colorPrimary"
+                android:padding="@dimen/default_margin_padding"/>
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="0dp"/>
+
+            <RadioButton
+                android:id="@+id/cold_coffee_radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cold_coffee"
+                android:buttonTint="@color/colorPrimary"
+                android:padding="@dimen/default_margin_padding"/>
+
+        </RadioGroup>
+
+
+        <CheckBox
+            android:id="@+id/extra_sugar_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/default_margin_padding"
+            android:text="@string/add_extra_sugar"
+            android:buttonTint="@color/colorPrimary"
+            android:layout_margin="@dimen/default_margin_padding"/>
+
+        <Button
+            android:id="@+id/place_order_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/double_margin_padding"
+            android:padding="@dimen/double_margin_padding"
+            android:text="@string/place_order"
+            android:textColor="@android:color/white"
+            android:background="@color/colorPrimary"/>
+
+    </LinearLayout>
+
+</ScrollView>
+
