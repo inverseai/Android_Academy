@@ -12,6 +12,8 @@
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="order_coffee">Order Coffee!</string>
+    <string name="default_coffee_price">$ 1.50</string>
+    <string name="default_coffee_amount">1</string>
 
     <array name="extra_sugar_option">
         <item>1 Spoon</item>

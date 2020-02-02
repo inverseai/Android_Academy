@@ -10,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,8 +23,10 @@ public class MainActivity extends AppCompatActivity {
     private Button placeOrderButton;
     private String customerName,customerAddress,customerPhoneNo,numberOfCoffee;
     private boolean addExtraSugar = false;
-    private int coffeeType = HOT_COFFEE;
+    private int coffeeType = HOT_COFFEE, numOfCoffeeCup = 1;
+    private double perCupCoffeePrice = 1.50,totalCoffeePrice = 1.50;
     private Toolbar appToolbar;
+    private TextView coffeePriceTextView, coffeePlusButton, coffeeMinusButton, coffeeAmountTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -46,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
         addExtraSugarCheckbox = findViewById(R.id.extra_sugar_checkbox);
         placeOrderButton = findViewById(R.id.place_order_button);
         appToolbar = findViewById(R.id.app_toolbar);
+
+        coffeePriceTextView = findViewById(R.id.coffee_price_text);
+        coffeePlusButton = findViewById(R.id.coffee_plus_button);
+        coffeeMinusButton = findViewById(R.id.coffee_minus_button);
+        coffeeAmountTextView = findViewById(R.id.coffee_num_of_cup_text);
 
         setSupportActionBar(appToolbar);
         if(getSupportActionBar() != null )
@@ -80,6 +88,20 @@ public class MainActivity extends AppCompatActivity {
                     coffeeType = COLD_COFFEE;
             }
         });
+
+        coffeePlusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                incrementNumOfCoffeeCup();
+            }
+        });
+
+        coffeeMinusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                decrementNumOfCoffeeCup();
+            }
+        });
     }
 
     private void showToast(String message)
@@ -112,6 +134,32 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return "";
         }
+    }
+
+    private void incrementNumOfCoffeeCup()
+    {
+        numOfCoffeeCup++;
+        totalCoffeePrice = numOfCoffeeCup * perCupCoffeePrice;
+        coffeeAmountTextView.setText(numOfCoffeeCup+"");
+        coffeePriceTextView.setText("$ "+totalCoffeePrice+"0");
+
+    }
+
+    private void decrementNumOfCoffeeCup()
+    {
+        numOfCoffeeCup--;
+        if(numOfCoffeeCup<1)
+        {
+            Toast.makeText(this, "Order at least one coffee!", Toast.LENGTH_SHORT).show();
+            numOfCoffeeCup=1;
+        }
+        totalCoffeePrice = numOfCoffeeCup * perCupCoffeePrice;
+        coffeeAmountTextView.setText(numOfCoffeeCup+"");
+        coffeePriceTextView.setText("$ "+totalCoffeePrice+"0");
+
+
+
+
     }
 
     private String getExtraSugarText()
