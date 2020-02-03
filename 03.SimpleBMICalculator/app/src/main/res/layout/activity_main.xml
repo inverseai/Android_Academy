@@ -8,9 +8,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include layout="@layout/app_toolbar"/>
+
+
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/app_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingBottom="?attr/actionBarSize"
+        android:clipToPadding="false"
         tools:context=".MainActivity">
 
         <LinearLayout
@@ -89,7 +98,8 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/double_margin_padding"
+                android:layout_marginStart="@dimen/double_margin_padding"
+                android:layout_marginEnd="@dimen/double_margin_padding"
                 app:cardElevation="4dp">
 
                 <LinearLayout
@@ -105,9 +115,8 @@
                         android:textColor="@color/lightGray"/>
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:orientation="horizontal">
 
                         <TextView
@@ -246,6 +255,19 @@
 
 
     </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/colorAccent"
+        android:text="Calculate BMI"
+        android:textAlignment="center"
+        style="@style/homeScreenTextStyle"
+        android:padding="@dimen/double_margin_padding"/>
+
 
 
 
