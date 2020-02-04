@@ -3,6 +3,7 @@ package com.androidacademy.bmicalculator;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -104,6 +105,13 @@ public class MainActivity extends AppCompatActivity
                 setFemaleGender();
             }
         });
+
+        calculateBMIButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveToResultScreen();
+            }
+        });
     }
 
     private void incrementAge()
@@ -162,6 +170,12 @@ public class MainActivity extends AppCompatActivity
         femaleButton.setCardBackgroundColor(getResources().getColor(R.color.plusMinusButtonBG));
         maleButton.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryLight));
 
+    }
+
+    private void moveToResultScreen()
+    {
+        Intent intent = new Intent(this,ResultActivity.class);
+        startActivity(intent);
     }
 
 
