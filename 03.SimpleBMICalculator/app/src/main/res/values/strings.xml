@@ -12,4 +12,5 @@
     <string name="normal_bmi_range">Normal BMI Range:</string>
     <string name="normal_bmi_range_value">18.5 - 25 Kg/m2</string>
     <string name="normal_weight_message">You have a normal body weight!\nGood Job</string>
+    <string name="re_calculate_bmi">Re-Calculate BMI</string>
 </resources>

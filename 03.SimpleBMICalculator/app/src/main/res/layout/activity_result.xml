@@ -75,12 +75,22 @@
                 android:layout_marginBottom="@dimen/double_margin_padding"
                 android:text="@string/normal_weight_message"/>
 
-
-
         </LinearLayout>
 
-
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/re_calculate_bmi_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/colorAccent"
+        android:text="@string/re_calculate_bmi"
+        android:textAlignment="center"
+        style="@style/homeScreenTextStyle"
+        android:padding="@dimen/double_margin_padding"/>
 
 
 
