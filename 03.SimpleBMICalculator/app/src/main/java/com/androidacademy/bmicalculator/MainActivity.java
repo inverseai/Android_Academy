@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +16,7 @@ public class MainActivity extends AppCompatActivity
     private TextView heightTextView, weightTextView, ageTextView, weightPlusButton, weightMinusButton, agePlusButton, ageMinusButton,
             calculateBMIButton;
     private CardView maleButton, femaleButton;
+    private SeekBar heightSeekBar;
     private int weight = DEFAULT_WEIGHT, age = DEFAULT_AGE;
 
     @Override
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity
         heightTextView = findViewById(R.id.height_text_view);
         weightTextView = findViewById(R.id.weight_text_view);
         ageTextView = findViewById(R.id.age_text_view);
+        heightSeekBar = findViewById(R.id.height_seek_bar);
         weightPlusButton = findViewById(R.id.weight_plus_button);
         weightMinusButton = findViewById(R.id.weight_minus_button);
         agePlusButton = findViewById(R.id.age_plus_button);
@@ -66,6 +70,24 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 decrementAge();
+            }
+        });
+
+        heightSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b)
+            {
+                updateWeightSeekBar(i);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
             }
         });
     }
@@ -104,6 +126,11 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this, "Weight Must be greater then 10", Toast.LENGTH_SHORT).show();
         }
         weightTextView.setText(weight+" KG");
+    }
 
+    private void updateWeightSeekBar(int progress)
+    {
+        heightSeekBar.setProgress(progress);
+        heightTextView.setText(progress+"");
     }
 }
