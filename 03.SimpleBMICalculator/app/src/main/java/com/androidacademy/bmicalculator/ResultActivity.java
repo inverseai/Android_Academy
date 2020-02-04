@@ -11,7 +11,8 @@ public class ResultActivity extends AppCompatActivity
 {
 
     private Toolbar toolbar;
-    private TextView recalculateBMIButton;
+    private TextView recalculateBMIButton,bmiTypeText, bmiValueText, bmiResultMessage;
+    private int weight, height;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,9 @@ public class ResultActivity extends AppCompatActivity
         toolbar = findViewById(R.id.app_toolbar);
         toolbar.setNavigationIcon(R.drawable.back_nav_white);
         recalculateBMIButton = findViewById(R.id.re_calculate_bmi_button);
+        bmiTypeText = findViewById(R.id.bmi_type_text);
+        bmiValueText = findViewById(R.id.bmi_value_text);
+        bmiResultMessage = findViewById(R.id.bmi_result_message);
         setSupportActionBar(toolbar);
     }
 
