@@ -12,12 +12,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
 {
-    private static final int DEFAULT_AGE = 19, DEFAULT_WEIGHT = 50;
+    private static final int DEFAULT_AGE = 19, DEFAULT_WEIGHT = 50, MALE_GENDER = 1, FEMALE_GENDER = 2, NOT_SELECTED_GENDER = -1;
     private TextView heightTextView, weightTextView, ageTextView, weightPlusButton, weightMinusButton, agePlusButton, ageMinusButton,
             calculateBMIButton;
     private CardView maleButton, femaleButton;
     private SeekBar heightSeekBar;
-    private int weight = DEFAULT_WEIGHT, age = DEFAULT_AGE;
+    private int weight = DEFAULT_WEIGHT, age = DEFAULT_AGE, gender = NOT_SELECTED_GENDER;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -90,6 +90,20 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
+
+        maleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setMaleGender();
+            }
+        });
+
+        femaleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setFemaleGender();
+            }
+        });
     }
 
     private void incrementAge()
@@ -132,5 +146,21 @@ public class MainActivity extends AppCompatActivity
     {
         heightSeekBar.setProgress(progress);
         heightTextView.setText(progress+"");
+    }
+
+    private void setMaleGender()
+    {
+        gender = MALE_GENDER;
+        maleButton.setCardBackgroundColor(getResources().getColor(R.color.plusMinusButtonBG));
+        femaleButton.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryLight));
+
+    }
+
+    private void setFemaleGender()
+    {
+        gender = FEMALE_GENDER;
+        femaleButton.setCardBackgroundColor(getResources().getColor(R.color.plusMinusButtonBG));
+        maleButton.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryLight));
+
     }
 }
