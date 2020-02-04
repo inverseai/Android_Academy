@@ -6,5 +6,6 @@
     <dimen name="plus_minus_button_bg_dimension">56dp</dimen>
     <dimen name="text_size">16sp</dimen>
     <dimen name="large_text_size">24sp</dimen>
-    <dimen name="medium_text_size">28sp</dimen>
+    <dimen name="extra_large_text_size">64sp</dimen>
+    <dimen name="medium_text_size">18sp</dimen>
 </resources>

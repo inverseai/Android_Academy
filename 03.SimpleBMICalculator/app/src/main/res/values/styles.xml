@@ -24,7 +24,11 @@
     </style>
 
     <style name="homeScreenMediumTextStyle" parent="homeScreenTextStyle">
-        <item name="android:textSize">@dimen/large_text_size</item>
+        <item name="android:textSize">@dimen/medium_text_size</item>
+    </style>
+
+    <style name="extraLargeTextStyle" parent="homeScreenTextStyle">
+        <item name="android:textSize">@dimen/extra_large_text_size</item>
     </style>
 
     <style name="plusMinusButtonStyle" >

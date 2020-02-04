@@ -8,4 +8,8 @@
     <string name="default_weight">50 KG</string>
     <string name="default_age">19</string>
     <string name="default_height">150</string>
+    <string name="your_result">Your Result</string>
+    <string name="normal_bmi_range">Normal BMI Range:</string>
+    <string name="normal_bmi_range_value">18.5 - 25 Kg/m2</string>
+    <string name="normal_weight_message">You have a normal body weight!\nGood Job</string>
 </resources>
