@@ -13,12 +13,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
 {
-    private static final int DEFAULT_AGE = 19, DEFAULT_WEIGHT = 50, MALE_GENDER = 1, FEMALE_GENDER = 2, NOT_SELECTED_GENDER = -1;
+    private static final int DEFAULT_AGE = 19, DEFAULT_WEIGHT = 50, MALE_GENDER = 1, FEMALE_GENDER = 2, NOT_SELECTED_GENDER = -1, DEFAULT_HEIGHT = 150;
     private TextView heightTextView, weightTextView, ageTextView, weightPlusButton, weightMinusButton, agePlusButton, ageMinusButton,
             calculateBMIButton;
     private CardView maleButton, femaleButton;
     private SeekBar heightSeekBar;
-    private int weight = DEFAULT_WEIGHT, age = DEFAULT_AGE, gender = NOT_SELECTED_GENDER;
+    private int weight = DEFAULT_WEIGHT, age = DEFAULT_AGE, gender = NOT_SELECTED_GENDER, height = DEFAULT_HEIGHT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -152,6 +152,7 @@ public class MainActivity extends AppCompatActivity
 
     private void updateWeightSeekBar(int progress)
     {
+        height = progress;
         heightSeekBar.setProgress(progress);
         heightTextView.setText(progress+"");
     }
@@ -175,6 +176,8 @@ public class MainActivity extends AppCompatActivity
     private void moveToResultScreen()
     {
         Intent intent = new Intent(this,ResultActivity.class);
+        intent.putExtra("weight",weight);
+        intent.putExtra("height",height);
         startActivity(intent);
     }
 

@@ -3,6 +3,7 @@ package com.androidacademy.bmicalculator;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ public class ResultActivity extends AppCompatActivity
     private Toolbar toolbar;
     private TextView recalculateBMIButton,bmiTypeText, bmiValueText, bmiResultMessage;
     private int weight, height;
+    private double bmi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,8 @@ public class ResultActivity extends AppCompatActivity
         setContentView(R.layout.activity_result);
         inflateUIElements();
         initUserInteractions();
+        grabValueFromIntent();
+        calculateBMI();
     }
 
     private void inflateUIElements()
@@ -48,6 +52,23 @@ public class ResultActivity extends AppCompatActivity
                 finish();
             }
         });
+
+    }
+
+    private void grabValueFromIntent()
+    {
+        Intent intent = getIntent();
+        if(intent!=null)
+        {
+            weight = intent.getIntExtra("weight",-1);
+            height = intent.getIntExtra("height",-1);
+        }
+    }
+
+    private void calculateBMI()
+    {
+        bmi = weight / Math.pow(height/100, 2);
+        bmiValueText.setText(String.format("%.2f",bmi));
 
     }
 }
