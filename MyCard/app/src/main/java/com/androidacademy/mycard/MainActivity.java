@@ -71,6 +71,8 @@ public class MainActivity extends AppCompatActivity
 
     private void openGithubIdIntent()
     {
-
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(getResources().getString(R.string.my_github_data)));
+        startActivity(intent);
     }
 }
