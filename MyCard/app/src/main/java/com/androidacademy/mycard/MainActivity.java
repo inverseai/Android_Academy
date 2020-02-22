@@ -59,12 +59,13 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse(getResources().getString(R.string.my_phone_no_data)));
         startActivity(intent);
-
-
     }
 
     private void openEmailIdIntent()
     {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse(getResources().getString(R.string.my_email_data)));
+        startActivity(intent);
 
     }
 

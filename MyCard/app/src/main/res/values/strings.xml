@@ -5,7 +5,7 @@
     <string name="my_phone_no">+8801965036172</string>
     <string name="my_phone_no_data">tel:+8801965036172</string>
     <string name="my_email">shadat.tonmoy@gmail.com</string>
-    <string name="my_email_data">shadat.tonmoy@gmail.com</string>
+    <string name="my_email_data">mailto:shadat.tonmoy@gmail.com</string>
     <string name="my_github">github.com/Shadat-tonmoy</string>
     <string name="my_github_data">github.com/Shadat-tonmoy</string>
 </resources>
