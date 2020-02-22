@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="double_margin_padding">16dp</dimen>
+    <dimen name="triple_margin_padding">24dp</dimen>
+    <dimen name="normal_text_size">16sp</dimen>
+    <dimen name="large_text_size">24sp</dimen>
+    <dimen name="extra_large_text_size">32sp</dimen>
+    <dimen name="image_dimension">96dp</dimen>
+    <dimen name="default_margin_padding">8dp</dimen>
+</resources>

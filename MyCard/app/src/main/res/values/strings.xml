@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MyCard</string>
+    <string name="my_name">Shadat Tonmoy</string>
+    <string name="my_designation">Software Engineer</string>
+    <string name="my_phone_no">+8801965036172</string>
+    <string name="my_email">shadat.tonmoy@gmail.com</string>
+    <string name="my_github">github.com/Shadat-tonmoy</string>
 </resources>
