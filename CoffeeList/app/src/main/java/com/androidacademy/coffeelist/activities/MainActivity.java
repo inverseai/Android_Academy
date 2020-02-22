@@ -1,8 +1,10 @@
-package com.androidacademy.coffeelist;
+package com.androidacademy.coffeelist.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.androidacademy.coffeelist.R;
 
 public class MainActivity extends AppCompatActivity {
 
