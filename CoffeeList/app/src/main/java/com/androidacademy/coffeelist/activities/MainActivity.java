@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity
 
     private void toggleViewType(@NonNull MenuItem item)
     {
-        Toast.makeText(this, "TappedOnMenu", Toast.LENGTH_SHORT).show();
         isList = !isList;
         item.setIcon(isList ? R.drawable.grid_white : R.drawable.list_white);
         toggleAdapter(isList);
