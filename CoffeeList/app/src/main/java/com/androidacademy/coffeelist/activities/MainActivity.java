@@ -1,6 +1,7 @@
 package com.androidacademy.coffeelist.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity
 
     private RecyclerView coffeeListView;
     private CoffeeListAdapter coffeeListAdapter;
+    private Toolbar appToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -22,12 +24,19 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         inflateUIElements();
+        initToolbar();
         initCoffeeList();
     }
 
     private void inflateUIElements()
     {
         coffeeListView = findViewById(R.id.coffee_list);
+        appToolbar = findViewById(R.id.app_toolbar);
+    }
+
+    private void initToolbar()
+    {
+        setSupportActionBar(appToolbar);
 
     }
 
