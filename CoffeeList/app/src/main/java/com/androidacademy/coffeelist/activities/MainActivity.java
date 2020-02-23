@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity
     private RecyclerView coffeeListView;
     private CoffeeListAdapter coffeeListAdapter;
     private Toolbar appToolbar;
+    private boolean isList = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -65,9 +66,16 @@ public class MainActivity extends AppCompatActivity
         switch (item.getItemId())
         {
             case R.id.view_type_menu:
-                Toast.makeText(this, "TappedOnMenu", Toast.LENGTH_SHORT).show();
+                toggleViewType(item);
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void toggleViewType(@NonNull MenuItem item)
+    {
+        Toast.makeText(this, "TappedOnMenu", Toast.LENGTH_SHORT).show();
+        isList = !isList;
+        item.setIcon(isList ? R.drawable.grid_white : R.drawable.list_white);
     }
 }
