@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.androidacademy.coffeelist.R;
 import com.androidacademy.coffeelist.model.CoffeeItem;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -60,6 +61,9 @@ public class CoffeeListAdapter extends RecyclerView.Adapter<CoffeeListAdapter.Co
         holder.coffeeTitle.setText(coffeeItem.getCoffeeTitle());
         holder.coffeeTotalReview.setText(activity.getResources().getString(R.string.rating_count,coffeeItem.getTotalRatingCount()));
         holder.coffeeRatings.setRating((float) coffeeItem.getCoffeeRating());
+        Glide.with(activity)
+                .load(coffeeItem.getCoffeeIcon())
+                .into(holder.coffeeIcon);
     }
 
     @Override
