@@ -1,11 +1,15 @@
 package com.androidacademy.coffeelist.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.androidacademy.coffeelist.R;
 import com.androidacademy.coffeelist.adapter.CoffeeListAdapter;
@@ -47,7 +51,23 @@ public class MainActivity extends AppCompatActivity
         coffeeListView.setLayoutManager(layoutManager);
         coffeeListView.setAdapter(coffeeListAdapter);
         coffeeListAdapter.bindCoffeeItemList(DummyData.dummyCoffeeItemList());
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.coffee_list_menu,menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.view_type_menu:
+                Toast.makeText(this, "TappedOnMenu", Toast.LENGTH_SHORT).show();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
