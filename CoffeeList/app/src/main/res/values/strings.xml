@@ -2,7 +2,7 @@
     <string name="app_name">CoffeeList</string>
     <string name="malai_hot">Malai Hot</string>
     <string name="default_price">BDT 75 Only</string>
-    <string name="coffee_price">BDT %lf Only</string>
+    <string name="coffee_price">BDT %f Only</string>
     <string name="default_rating_count">(34 Reviews)</string>
     <string name="rating_count">(%d Reviews)</string>
 </resources>

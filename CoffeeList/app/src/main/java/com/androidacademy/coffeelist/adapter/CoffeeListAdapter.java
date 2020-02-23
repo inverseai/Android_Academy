@@ -56,9 +56,9 @@ public class CoffeeListAdapter extends RecyclerView.Adapter<CoffeeListAdapter.Co
     {
         CoffeeItem coffeeItem = coffeeItemList.get(position);
         holder.coffeeIcon.setImageResource(R.drawable.malai_hot);
-        holder.coffeePrice.setText(activity.getResources().getString(R.string.coffee_price,coffeeItem.getCoffeePrice()));
+        holder.coffeePrice.setText(activity.getResources().getString(R.string.coffee_price,(float)coffeeItem.getCoffeePrice()));
         holder.coffeeTitle.setText(coffeeItem.getCoffeeTitle());
-        holder.coffeeTotalReview.setText(activity.getResources().getString(R.string.coffee_price,coffeeItem.getTotalRatingCount()));
+        holder.coffeeTotalReview.setText(activity.getResources().getString(R.string.rating_count,coffeeItem.getTotalRatingCount()));
         holder.coffeeRatings.setRating((float) coffeeItem.getCoffeeRating());
     }
 
