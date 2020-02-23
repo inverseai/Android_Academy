@@ -21,9 +21,11 @@ public class CoffeeListAdapter extends RecyclerView.Adapter<CoffeeListAdapter.Co
 
     private List<CoffeeItem> coffeeItemList;
     private Activity activity;
+    private boolean isList = true;
 
-    public CoffeeListAdapter(Activity activity) {
+    public CoffeeListAdapter(Activity activity, boolean isList) {
         this.activity = activity;
+        this.isList = isList;
     }
 
     class CoffeeListViewHolder extends RecyclerView.ViewHolder
@@ -48,7 +50,7 @@ public class CoffeeListAdapter extends RecyclerView.Adapter<CoffeeListAdapter.Co
     @Override
     public CoffeeListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
-        View itemView = activity.getLayoutInflater().inflate(R.layout.coffee_list_item_single_row,parent,false);
+        View itemView = activity.getLayoutInflater().inflate(isList ? R.layout.coffee_list_item_single_row : R.layout.coffee_grid_item_single_row,parent,false);
         return new CoffeeListViewHolder(itemView);
     }
 

@@ -3,6 +3,7 @@ package com.androidacademy.coffeelist.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity
 
     private void initCoffeeList()
     {
-        coffeeListAdapter = new CoffeeListAdapter(this);
+        coffeeListAdapter = new CoffeeListAdapter(this,true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         coffeeListView.setLayoutManager(layoutManager);
         coffeeListView.setAdapter(coffeeListAdapter);
@@ -77,5 +78,22 @@ public class MainActivity extends AppCompatActivity
         Toast.makeText(this, "TappedOnMenu", Toast.LENGTH_SHORT).show();
         isList = !isList;
         item.setIcon(isList ? R.drawable.grid_white : R.drawable.list_white);
+        toggleAdapter(isList);
+
+    }
+
+    private void toggleAdapter(boolean isList)
+    {
+        coffeeListAdapter = new CoffeeListAdapter(this,isList);
+        coffeeListView.setLayoutManager(getLayoutManager(isList));
+        coffeeListView.setAdapter(coffeeListAdapter);
+        coffeeListAdapter.bindCoffeeItemList(DummyData.dummyCoffeeItemList());
+
+
+    }
+
+    private RecyclerView.LayoutManager getLayoutManager(boolean isList)
+    {
+        return  isList ? new LinearLayoutManager(this) : new GridLayoutManager(this,2);
     }
 }
