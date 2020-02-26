@@ -51,11 +51,13 @@ public class MainActivity extends AppCompatActivity
     private void moveToLoginScreen()
     {
 
+        //TODO implement the functionality of moving to login screen
+
 
     }
 
     private void moveToSignUpScreen()
     {
-
+        //TODO implement the functionality of moving to signup screen
     }
 }
