@@ -1,18 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <ImageView
+        android:id="@+id/coffee_icon"
+        android:layout_width="@dimen/home_screen_icon_dimension"
+        android:layout_height="@dimen/home_screen_icon_dimension"
+        android:src="@drawable/coffee"
+        android:layout_marginBottom="@dimen/home_screen_icon_bottom_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/app_title_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/coffeefy"
+        android:textSize="@dimen/large_text"
+        android:fontFamily="@font/pacifico_regular"
+        android:padding="@dimen/double_margin_padding"
+        app:layout_constraintTop_toBottomOf="@id/coffee_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/extra_large_text"
+        android:layout_marginEnd="@dimen/extra_large_text"
+        android:layout_marginBottom="@dimen/login_button_bottom_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/login"/>
+
+    <Button
+        android:id="@+id/sign_up_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/extra_large_text"
+        android:layout_marginEnd="@dimen/extra_large_text"
+        android:layout_marginBottom="@dimen/double_margin_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/login_button"
+        android:text="@string/signup"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
